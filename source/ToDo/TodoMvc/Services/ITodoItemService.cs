@@ -9,5 +9,6 @@ namespace TodoMvc.Services
     {
         Task<IEnumerable<ToDoItem>> GetIncompleteItemsAsync();
         Task<bool> AddItemAsync(NewToDoItem NewToDoItem);
+        Task<bool> MarkDoneAsync(Guid id);
     }
 }

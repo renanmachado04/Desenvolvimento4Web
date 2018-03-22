@@ -44,5 +44,16 @@ namespace TodoMvc.Controllers
 
             return Ok();
         }
+
+        public async Task<IActionResult> MarkDoneAsync(Guid id)
+        {
+            if (id == Guid.Empty)
+                return BadRequest();
+
+            var successful = await _todoItemsService
+                .MarkDoneAsync(id);
+
+            return Ok();
+        }
     }
 }
